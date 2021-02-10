@@ -3,11 +3,8 @@ import java.io.File;
 public class Tree {
 
   /**
-  * Pretty print the directory tree and its file names.
-  *
-  * @param folder
-  *            must be a folder.
-  * @return
+  * El método imprime el arbol con las carpetas y archivos que contiene.
+  * @param folder debe ser una carpeta.
   */
   public String printDirectoryTree(File folder) {
       if (!folder.isDirectory()) {
@@ -19,6 +16,12 @@ public class Tree {
       return sb.toString();
   }
 
+  /**
+  * El método sirve para crear el string que se imprime en el método anterior.
+  * @param folder debe ser una carpeta.
+  * @param indent es para las filas que se terminaran imprimiendo
+  * @param sb es el StringBuilder que maneja todo lo que se imprimirá
+  */
   private void printDirectoryTree(File folder, int indent, StringBuilder sb) {
       if (!folder.isDirectory()) {
           throw new IllegalArgumentException("folder is not a Directory");
